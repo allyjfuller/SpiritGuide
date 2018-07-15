@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Spirit Guide | Cocktails by Name</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="css/app.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+</head>
+<body>
+
+<body>
+<div id="header-wrapper">
+    <img src="SpiritsLogo.png" id="image" alt="logo">
+    <div id="menu">
+      <ul>
+        <li class="active"><a href="ByName.html">Name</a></li>
+        <li><a href="ByIngredient.html">Ingredient</a></li>
+        <li><a href="ByCategory.html">Category</a></li>
+        <li><a href="ByGlassware.html">Glassware</a></li>
+        <li><a href="Favorites.html">Favorites</a></li>
+        <li><a href="SignOut.html">Sign Out</a></li>
+      </ul>
+    </div>
+  </div>
+
+<div id="search-container">
+    <h1 class="text-center">Search Cocktails by Name:</h1>
+        
+        <form action="#" id="search-form">
+            <div class="form-group">
+            <input type="text" class="form-control" id="search" placeholder="Search...">
+            </div>
+            
+            <div class="form-group pt-3">
+            <input type="hidden" id="type" value="name">
+
+            <button type="submit" class="btn btn-success d-block">GET COCKTAILS</button>
+            </div>
+        </form>
+</div>
+
+<div class="results results-wrapper" style="display:none;" >
+    <h1 class="text-center">Results: <span id="total"></span></h1>
+        <div id="results" class="mt-5 row" ></div>
+                            
+</div> 
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!-- My Scripts-->
+<script src="js/CocktailAPI.js"></script>
+<script src="js/CocktailDB.js"></script>
+<script src="js/UI.js"></script>
+<script src="js/SGapp.js"></script>
+
+</body>
+</html>
