@@ -182,18 +182,18 @@
 /* Button Style                                                                  */
 /*********************************************************************************/
 
-	.button
+	button
 	{
 		display: inline-block;
 		padding: 1em 2em 1em 2em;
 		letter-spacing: 0.10em;
-		margin-top: 2em;
+		margin-top: 0.5em;
 		padding: 1.40em 3em;
-		background: #2651a8;
+		background: #000;
 		border-radius: 6px;
 		text-decoration: none;
-		font-weight: 700;
 		font-size: 1em;
+		font-family: 'Open Sans Condensed', sans-serif;
 		color: #FFF;
 	}
 	

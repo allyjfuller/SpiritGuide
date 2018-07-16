@@ -1,57 +1,29 @@
-
-
-
-/*
-class CocktailAPI{
-
-$(document).ready(function () {
-    // This gets the data from TheCocktailDB and displays it on the page
-    function getDrinksByName(name) {
-        $.getJSON(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`,
-        {
-            "part": "photo",
-            "key": "1",
-            "q": name,
-            "maxResults": 20
-        },
-        // On Success
-        function (data) {
-            if (data.pageInfo.totalResults == 0) {
-                alert("No Results");
-            }
-        //If no results, empty the list
-        displayResults(data.items);
-        }
-    );
-
-}
-*/
-
-
+//i just removed fetch for ajax
 class CocktailAPI{
 
     // Get recipe by name
     async getDrinksByName(name){
         //Search by name
-        const apiResponse = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`);
+        const apiResponse = await $.getJSON(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`);
 
         // Return a json response
 
-        const cocktails = await apiResponse.json();
+        const cocktails = await apiResponse;
 
         return{
             cocktails
-        } 
+        }
     }
+
 
     //Get recipe by ingrediant
     async getDrinksByIngredient(ingredient){
         //Search by ingrediant
-        const apiResponse = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`);
+        const apiResponse = await $.getJSON(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`);
 
         //Retuern a json response
 
-        const cocktails = await apiResponse.json();
+        const cocktails = await apiResponse;
 
         return {
             cocktails
@@ -61,11 +33,11 @@ class CocktailAPI{
     //Get single recipe
     async getSingleRecipe(id){
         //Search by ingrediant
-        const apiResponse = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`);
+        const apiResponse = await $.getJSON(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`);
 
         //Retuern a json response
 
-        const recipe = await apiResponse.json();
+        const recipe = await apiResponse;
 
         return {
             recipe
@@ -75,11 +47,11 @@ class CocktailAPI{
     //Retrieves all categories from REST API
 
     async getCategories(){
-        const apiResponse = await fetch('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list');
+        const apiResponse = await $.getJSON('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list');
 
         //wait for the response and return json
 
-        const categories = await apiResponse.json();
+        const categories = await apiResponse;
 
         return{
             categories
@@ -89,11 +61,11 @@ class CocktailAPI{
     //Get Drinks by category
     async getDrinksByCategory(category){
         //Search by category
-        const apiResponse = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`);
+        const apiResponse = await $.getJSON(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`);
 
         //Retuern a json response
 
-        const cocktails = await apiResponse.json();
+        const cocktails = await apiResponse;
 
         return {
             cocktails
@@ -104,15 +76,14 @@ class CocktailAPI{
     //Get Drinks by Glassware
     async getDrinksByGlassware(glass){
         //Search by Glassware
-        const apiResponse = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=${glass}`);
+        const apiResponse = await $.getJSON(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=${glass}`);
 
         //Return a json response
 
-        const cocktails = await apiResponse.json();
+        const cocktails = await apiResponse;
 
         return {
             cocktails
         }
     }
 }
-
